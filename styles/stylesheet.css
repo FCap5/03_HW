@@ -1,0 +1,40 @@
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container{
+    text-align: center;
+}
+
+.form{
+    border: solid black 2px;
+    padding: 40px;
+    border-radius: 3rem;
+    height: 400px;
+    text-align: center
+}
+
+.leftHeader{
+    text-align: left;
+}
+
+.hr {
+    border: 2px solid gray;
+}
+
+.passwordDisplay {
+    border: dashed 2px gray;
+    height: 130px;
+    text-align: center;
+    padding: 10px;
+    word-break: break-all;
+    
+}
+
+.btn{
+    align-self: center;
+
+}
