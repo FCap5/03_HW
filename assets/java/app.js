@@ -8,6 +8,10 @@ var lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "
 var specialCharactrs = ["!", "#", "$", "%", "&", "*", "@", ".", "/", "?", "-"];
 
 var passwordSubmit = document.querySelector(".passwordDisplay");
+function clearResponse() {
+    finalPassword = [];
+    console.log(passwordSubmit);
+}
 //location for final password array
 var passwordArray = [];
 var passwordLetter = [];
@@ -18,6 +22,7 @@ var finalPassword = [];
 
 //function to establish parameters for password generator
 function passwordVariables() {
+    clearResponse();
     function passwordLength() {
         var totalCharacters = prompt("How many characters would you like your password to be?");
         if (totalCharacters >= 8 && totalCharacters <= 128) {
@@ -30,14 +35,20 @@ function passwordVariables() {
 
         function randomArray() {
             for (x = 0; x < totalCharacters; x++) {
-                var y = passwordArray.length
+                var y = passwordArray.length - 1;
                 passwordLetter = Math.floor((Math.random() * y) + 1);
                 var z = passwordArray[passwordLetter];
+                //need to
                 finalPassword.push(z);
 
             }
             console.log(finalPassword);
-            passwordSubmit = finalPassword;
+            var finalFinalPassword = finalPassword.join("");
+            console.log(finalFinalPassword)
+            passwordSubmit.textContent = "";
+            passwordSubmit.textContent = finalFinalPassword;
+
+
         };
 
         //concats variables into final password array
@@ -61,6 +72,7 @@ function passwordVariables() {
             if (wantSpecialCharacters === true) {
                 var addSpecialCharacters = passwordArray.concat(specialCharactrs);
                 console.log(addSpecialCharacters);
+                passwordArray = addSpecialCharacters;
             }
             console.log(passwordArray);
             randomArray();
@@ -92,4 +104,4 @@ function passwordVariables() {
 var myButton = document.querySelector('button');
 myButton.onclick = function () {
     passwordVariables();
-}
+};
