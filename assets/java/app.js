@@ -10,7 +10,13 @@ var specialCharactrs = ["!", "#", "$", "%", "&", "*", "@", ".", "/", "?", "-"];
 var passwordSubmit = document.querySelector(".passwordDisplay");
 function clearResponse() {
     finalPassword = [];
+    finalFinalPassword = "";
     console.log(passwordSubmit);
+    passwordArray = [];
+    wantNumbers = "";
+    wantUpperCase = "";
+    wantLowerCase = "";
+    wantSpecialCharacters = "";
 }
 //location for final password array
 var passwordArray = [];
